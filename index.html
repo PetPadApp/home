@@ -31,36 +31,28 @@
         
         h1 {
             color: var(--primary-color);
-            margin: 10px 0 0;
+            margin-bottom: 5px;
             font-weight: 700;
-            position: relative;
-            padding: 10px 15px;  /* Added horizontal padding */
             text-align: center;
-            font-size: 2.2em;
-            white-space: nowrap;  /* Prevents text wrapping */
-            max-width: 100%;     /* Ensures it doesn't overflow container */
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
-        /* For screens smaller than 600px */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;  /* Slightly smaller font on mobile */
-                padding: 10px 5px; /* Reduced padding on mobile */
-            }
-        }
-        
-        /* For very small screens */
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 1.5em;  /* Even smaller font on very small screens */
-            }
-        }
-        
+
         h1::before,
         h1::after {
             content: '🐾';
             margin: 0 10px;
             font-size: 1.2em;
+            display: inline-block; /* Ensure the transform works */
+        }
+
+        h1::after {
+            transform: scaleX(-1);
+            -webkit-transform: scaleX(-1); /* For Safari/Chrome */
+            -ms-transform: scaleX(-1); /* For IE/Edge */
         }
         
         h2 {
@@ -217,7 +209,8 @@
             <div class="app-icon">
                 <i class="fas fa-paw"></i>
             </div>
-            <h1>Welcome to Pet Pad</h1>
+            <h1>Pet Pad App</h1>
+            <h2>Welcome!</h2>
             <p>Your all-in-one pet care companion</p>
             
             <a href="#" id="appStoreLink" class="btn">
